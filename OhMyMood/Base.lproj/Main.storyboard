@@ -78,6 +78,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="MbH-oe-RtP"/>
+                    <connections>
+                        <outletCollection property="emojiButtons" destination="f0H-Xu-fmo" collectionClass="NSMutableArray" id="l72-VX-5cq"/>
+                        <outletCollection property="emojiButtons" destination="X0N-hx-bNh" collectionClass="NSMutableArray" id="GPr-Ip-saX"/>
+                        <outletCollection property="emojiButtons" destination="BkU-7f-SkA" collectionClass="NSMutableArray" id="hRb-pH-Dcb"/>
+                        <outletCollection property="emojiButtons" destination="6Ta-f1-131" collectionClass="NSMutableArray" id="RJv-vE-y03"/>
+                        <outletCollection property="emojiButtons" destination="Oc5-Wz-2AC" collectionClass="NSMutableArray" id="xlD-mw-r9H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
