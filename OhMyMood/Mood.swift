@@ -21,4 +21,14 @@ enum Mood: Int, CaseIterable {
         case .veryBad:      return "많이슬픈지수"
         }
     }
+    
+    var key: String {
+        switch self {
+        case .veryGood:     return "veryGood"
+        case .good:         return "good"
+        case .soso:         return "soso"
+        case .bad:          return "bad"
+        case .veryBad:      return "veryBad"
+        }
+    }
 }

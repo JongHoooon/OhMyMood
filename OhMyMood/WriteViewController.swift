@@ -72,6 +72,7 @@ final class WriteViewController: UIViewController {
         countsOfEmojiTapped[tag] += score
         if let mood = Mood(rawValue: tag) {
             print("\(mood.name): \(countsOfEmojiTapped[tag])점")
+            UserDefaults.standard.set(countsOfEmojiTapped[tag], forKey: mood.key)
         }
     }
 }

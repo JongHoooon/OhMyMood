@@ -237,6 +237,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="j3D-As-jU6"/>
                     <connections>
+                        <outlet property="badScoreLabel" destination="1Ga-b6-AAg" id="Lx0-U1-WIW"/>
+                        <outlet property="goodScoreLabel" destination="brX-dG-sDK" id="czK-vD-nvH"/>
+                        <outlet property="sosoScoreLabel" destination="njw-lM-X43" id="WTM-zl-nP2"/>
+                        <outlet property="veryBadScoreLabel" destination="VzJ-Tg-dS5" id="AsB-r0-4d1"/>
+                        <outlet property="veryGoodScoreLabel" destination="6t2-Uj-9PU" id="zdZ-hI-cTM"/>
                         <outletCollection property="backgroundViews" destination="ijb-yV-pMZ" collectionClass="NSMutableArray" id="PHu-Qd-Q8Z"/>
                         <outletCollection property="backgroundViews" destination="xao-By-ae4" collectionClass="NSMutableArray" id="Nit-g9-wje"/>
                         <outletCollection property="backgroundViews" destination="8xY-NZ-X8v" collectionClass="NSMutableArray" id="z5r-WE-aQN"/>

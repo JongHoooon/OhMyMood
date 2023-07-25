@@ -13,7 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Mood.allCases
+            .map { $0.key }
+            .forEach {
+                UserDefaults.standard.set(0, forKey: $0)
+            }
+        
         return true
     }
 
