@@ -36,7 +36,7 @@ final class WriteViewController: UIViewController {
                     })
                 }
             
-            let resetScore = UIAction(title: "점수 초기화", attributes: .destructive) { _ in
+            let resetScoreAction = UIAction(title: "점수 초기화", attributes: .destructive) { _ in
                 if let score = self?.countsOfEmojiTapped[button.tag] {
                     self?.addAndPrintScore(
                         tag: button.tag,
@@ -50,7 +50,7 @@ final class WriteViewController: UIViewController {
                 image: nil,
                 identifier: nil,
                 options: .displayInline,
-                children: actions + [resetScore]
+                children: actions + [resetScoreAction]
             )
             
             button.menu = menu
