@@ -11,6 +11,7 @@ final class WriteViewController: UIViewController {
     
     @IBOutlet var emojiButtons: [UIButton]!
     @IBOutlet weak var settingBarButton: UIBarButtonItem!
+    @IBOutlet weak var colorBarButton: UIBarButtonItem!
     
     private var countsOfEmojiTapped = [Int](
         repeating: 0,
@@ -27,24 +28,14 @@ final class WriteViewController: UIViewController {
     private func configButtons() {
         emojiButtons.forEach { [weak self] button in
             
-            let plusOne = UIAction(
-                title: "1점+",
-                image: UIImage(systemName: "bitcoinsign.circle")
-            ) { _ in
-                self?.addAndPrintScore(tag: button.tag)
-            }
-            let plusFive = UIAction(
-                title: "5점+",
-                image: UIImage(systemName: "bitcoinsign.circle")
-            ) { _ in
-                self?.addAndPrintScore(tag: button.tag, score: 5)
-            }
-            let plusTen = UIAction(
-                title: "10점+",
-                image: UIImage(systemName: "bitcoinsign.circle")
-            ) { _ in
-                self?.addAndPrintScore(tag: button.tag, score: 10)
-            }
+            let actions: [UIAction] = Score
+                .allCases
+                .map {
+                    return UIAction(title: $0.title,handler: { [weak self] _ in
+                        self?.addAndPrintScore(tag: button.tag)
+                    })
+                }
+            
             let resetScore = UIAction(title: "점수 초기화", attributes: .destructive) { _ in
                 if let score = self?.countsOfEmojiTapped[button.tag] {
                     self?.addAndPrintScore(
@@ -59,7 +50,7 @@ final class WriteViewController: UIViewController {
                 image: nil,
                 identifier: nil,
                 options: .displayInline,
-                children: [plusOne, plusFive, plusTen, resetScore]
+                children: actions + [resetScore]
             )
             
             button.menu = menu
@@ -67,18 +58,18 @@ final class WriteViewController: UIViewController {
     }
     
     private func configBarButton() {
-
+        
         let plusOneAll = UIAction(
             title: "전체 +1",
-            image: UIImage(systemName: "plus.circle"),
+            image: ImageStorage.plusCircle,
             handler: { [weak self] _ in
                 for tag in 0..<Mood.allCases.count {
                     self?.addAndPrintScore(tag: tag)
                 }
-        })
+            })
         let resetAll = UIAction(
             title: "전체 리셋",
-            image: UIImage(systemName: "trash.fill"),
+            image: ImageStorage.trashFill,
             attributes: .destructive,
             handler: { [weak self] _ in
                 for tag in 0..<Mood.allCases.count {
@@ -86,10 +77,34 @@ final class WriteViewController: UIViewController {
                         self?.addAndPrintScore(tag: tag, score: score * -1)
                     }
                 }
-        })
-        let menu = UIMenu(title: "점수 설정", children: [plusOneAll, resetAll])
-        settingBarButton.menu = menu
+            })
         
+        let colorActions: [UIAction] = Color.allCases
+            .map { [weak self] color in
+                return UIAction(title: color.title, handler: { _ in
+                    self?.colorSetting(color: color.color)
+                    print("test")
+                })
+            }
+        
+        let colorMenu = UIMenu(
+            title: "타이틀 색상 설정",
+            subtitle: "색상 변경",
+            options: .singleSelection,
+            children: colorActions
+        )
+        
+        let settingMenu = UIMenu(
+            title: "점수 설정",
+            children: [plusOneAll, resetAll, colorMenu]
+        )
+        settingBarButton.menu = settingMenu
+        
+        colorBarButton.menu = colorMenu
+        colorBarButton.changesSelectionAsPrimaryAction = true
+        
+        colorBarButton.title = nil
+        colorBarButton.image = UIImage(systemName: "paintbrush")
     }
     
     @IBAction private func emojiButtonTapped(_ sender: UIButton) {
@@ -102,5 +117,14 @@ final class WriteViewController: UIViewController {
             print("\(mood.name): \(countsOfEmojiTapped[tag])점")
             UserDefaults.standard.set(countsOfEmojiTapped[tag], forKey: mood.key)
         }
+    }
+    
+    private func colorSetting(color: UIColor) {
+        colorBarButton.title = nil
+        colorBarButton.image = UIImage(systemName: "paintbrush")
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: color
+        ]
+        colorBarButton.tintColor = color
     }
 }
