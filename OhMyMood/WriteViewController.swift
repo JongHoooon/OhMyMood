@@ -104,7 +104,7 @@ final class WriteViewController: UIViewController {
         colorBarButton.changesSelectionAsPrimaryAction = true
         
         colorBarButton.title = nil
-        colorBarButton.image = UIImage(systemName: "paintbrush")
+        colorBarButton.image = ImageStorage.paintBrush
     }
     
     @IBAction private func emojiButtonTapped(_ sender: UIButton) {
@@ -121,7 +121,7 @@ final class WriteViewController: UIViewController {
     
     private func colorSetting(color: UIColor) {
         colorBarButton.title = nil
-        colorBarButton.image = UIImage(systemName: "paintbrush")
+        colorBarButton.image = ImageStorage.paintBrush
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: color
         ]
