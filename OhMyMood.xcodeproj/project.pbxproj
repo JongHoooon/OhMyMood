@@ -10,6 +10,7 @@
 		ED4E538E2A70FA9B00F45019 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E538D2A70FA9B00F45019 /* ImageStorage.swift */; };
 		ED4E53902A70FBA900F45019 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E538F2A70FBA900F45019 /* Score.swift */; };
 		ED4E53922A70FFCA00F45019 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E53912A70FFCA00F45019 /* Color.swift */; };
+		ED4E53942A71096C00F45019 /* SheetPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E53932A71096C00F45019 /* SheetPresentViewController.swift */; };
 		EDBEB0EC2A6FB18C00290B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEB0EB2A6FB18C00290B1A /* AppDelegate.swift */; };
 		EDBEB0EE2A6FB18C00290B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEB0ED2A6FB18C00290B1A /* SceneDelegate.swift */; };
 		EDBEB0F02A6FB18C00290B1A /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBEB0EF2A6FB18C00290B1A /* WriteViewController.swift */; };
@@ -24,6 +25,7 @@
 		ED4E538D2A70FA9B00F45019 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
 		ED4E538F2A70FBA900F45019 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		ED4E53912A70FFCA00F45019 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		ED4E53932A71096C00F45019 /* SheetPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentViewController.swift; sourceTree = "<group>"; };
 		EDBEB0E82A6FB18C00290B1A /* OhMyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBEB0EB2A6FB18C00290B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDBEB0ED2A6FB18C00290B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				ED4E53912A70FFCA00F45019 /* Color.swift */,
 				ED4E538F2A70FBA900F45019 /* Score.swift */,
 				EDE2CA112A6FBD02001867AF /* StaticsViewController.swift */,
+				ED4E53932A71096C00F45019 /* SheetPresentViewController.swift */,
 				EDBEB0F12A6FB18C00290B1A /* Main.storyboard */,
 				EDBEB0F42A6FB18D00290B1A /* Assets.xcassets */,
 				EDBEB0F62A6FB18D00290B1A /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				ED4E53922A70FFCA00F45019 /* Color.swift in Sources */,
 				EDBEB0EC2A6FB18C00290B1A /* AppDelegate.swift in Sources */,
 				EDBEB0EE2A6FB18C00290B1A /* SceneDelegate.swift in Sources */,
+				ED4E53942A71096C00F45019 /* SheetPresentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

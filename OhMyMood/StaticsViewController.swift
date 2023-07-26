@@ -51,4 +51,16 @@ final class StaticsViewController: UIViewController {
         }
     }
     
+    @IBAction func presentButonTapped(_ sender: UIButton) {
+        let vc = SheetPresentViewController()
+        vc.modalPresentationStyle = .pageSheet
+        
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+        }
+        
+        present(vc, animated: true)
+    }
+    
 }

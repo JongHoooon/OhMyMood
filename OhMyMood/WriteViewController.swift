@@ -83,9 +83,10 @@ final class WriteViewController: UIViewController {
             .map { [weak self] color in
                 return UIAction(title: color.title, handler: { _ in
                     self?.colorSetting(color: color.color)
-                    print("test")
                 })
             }
+        
+        colorActions[0].state = .on
         
         let colorMenu = UIMenu(
             title: "타이틀 색상 설정",
