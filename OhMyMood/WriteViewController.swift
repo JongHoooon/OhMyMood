@@ -10,6 +10,7 @@ import UIKit
 final class WriteViewController: UIViewController {
     
     @IBOutlet var emojiButtons: [UIButton]!
+    @IBOutlet weak var settingBarButton: UIBarButtonItem!
     
     private var countsOfEmojiTapped = [Int](
         repeating: 0,
@@ -20,6 +21,7 @@ final class WriteViewController: UIViewController {
         super.viewDidLoad()
         
         configButtons()
+        configBarButton()
     }
     
     private func configButtons() {
@@ -62,6 +64,32 @@ final class WriteViewController: UIViewController {
             
             button.menu = menu
         }
+    }
+    
+    private func configBarButton() {
+
+        let plusOneAll = UIAction(
+            title: "전체 +1",
+            image: UIImage(systemName: "plus.circle"),
+            handler: { [weak self] _ in
+                for tag in 0..<Mood.allCases.count {
+                    self?.addAndPrintScore(tag: tag)
+                }
+        })
+        let resetAll = UIAction(
+            title: "전체 리셋",
+            image: UIImage(systemName: "trash.fill"),
+            attributes: .destructive,
+            handler: { [weak self] _ in
+                for tag in 0..<Mood.allCases.count {
+                    if let score = self?.countsOfEmojiTapped[tag] {
+                        self?.addAndPrintScore(tag: tag, score: score * -1)
+                    }
+                }
+        })
+        let menu = UIMenu(title: "점수 설정", children: [plusOneAll, resetAll])
+        settingBarButton.menu = menu
+        
     }
     
     @IBAction private func emojiButtonTapped(_ sender: UIButton) {

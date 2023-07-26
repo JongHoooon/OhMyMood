@@ -69,7 +69,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lr9-MN-LOI" secondAttribute="bottom" id="gab-Uf-TBB"/>
                             <constraint firstItem="lr9-MN-LOI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h0T-KW-j8d"/>
@@ -77,8 +77,13 @@
                             <constraint firstItem="lr9-MN-LOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vwA-8X-0LJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="OH MY MOOD" id="MbH-oe-RtP"/>
+                    <navigationItem key="navigationItem" title="OH MY MOOD" id="MbH-oe-RtP">
+                        <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="BLx-ec-LvU">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="settingBarButton" destination="BLx-ec-LvU" id="Q2e-cH-qov"/>
                         <outletCollection property="emojiButtons" destination="f0H-Xu-fmo" collectionClass="NSMutableArray" id="l72-VX-5cq"/>
                         <outletCollection property="emojiButtons" destination="X0N-hx-bNh" collectionClass="NSMutableArray" id="GPr-Ip-saX"/>
                         <outletCollection property="emojiButtons" destination="BkU-7f-SkA" collectionClass="NSMutableArray" id="hRb-pH-Dcb"/>
@@ -320,6 +325,7 @@
         <image name="emoji3" width="50" height="38"/>
         <image name="emoji4" width="52" height="48"/>
         <image name="emoji5" width="54" height="50"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
         <namedColor name="AccentColor">
